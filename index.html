@@ -78,13 +78,12 @@
     animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;
   }
   @keyframes rise{to{opacity:1;transform:none;}}
- #intro{animation-delay:.05s;}
+  #intro{animation-delay:.05s;}
   #about{animation-delay:.15s;}
   #research{animation-delay:.25s;}
   #teaching{animation-delay:.35s;}
   #policy{animation-delay:.45s;}
-  #cv{animation-delay:.55s;}
-  #contact{animation-delay:.65s;}
+  #contact{animation-delay:.55s;}
 
   /* ---- header / intro ---- */
   header{padding-top:88px;}
@@ -164,8 +163,7 @@
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#research">Research</a>
-      <a href="#cv">CV</a>
-     <a href="#teaching">Teaching</a>
+      <a href="#teaching">Teaching</a>
       <a href="#policy">Policy</a>
       <a href="#contact">Contact</a>
     </div>
@@ -183,23 +181,22 @@
     <div class="role">PhD Candidate in Economics</div>
     <div class="affil">European University Institute · Florence, Italy</div>
     <div class="contact-row">
-      <!-- EDIT #4 — fill in your real links. Delete any you don't use. -->
-      <a href="mailto:your.email@eui.eu">Email</a>
+      <!-- EDIT #4 — your real links -->
+      <a href="mailto:pedro.lomo@eui.eu">Email</a>
       <a href="#" target="_blank">CV (PDF)</a>
-      <a href="#" target="_blank">Google Scholar</a>
-      <a href="#" target="_blank">SSRN</a>
-      <a href="#" target="_blank">GitHub</a>
     </div>
   </header>
 
   <!-- ============================================================
-       ABOUT
+       ABOUT  (CV link now lives here)
        ============================================================ -->
   <section id="about">
     <div class="label">About</div>
     <!-- EDIT #5 — your one- or two-paragraph bio -->
     <p>I am a PhD candidate in Economics at the European University Institute in Florence, working in international macroeconomics and international trade.</p>
     <p>My research studies how trade policy uncertainty, geoeconomic fragmentation, and firms' supply-chain resilience shape market structure, markups, and welfare. <em>[Replace this with a sentence or two about what drives your work.]</em></p>
+    <!-- EDIT #6 — once you upload your CV PDF, point this link at it -->
+    <p>My full CV is available <a href="#" target="_blank">here (PDF)</a>.</p>
   </section>
 
   <!-- ============================================================
@@ -211,7 +208,7 @@
     <!-- Job market paper, highlighted -->
     <div class="jmp">
       <div class="tag">Job Market Paper</div>
-      <!-- EDIT #6 — your JMP title and a short abstract -->
+      <!-- EDIT #7 — your JMP title and a short abstract -->
       <div class="ptitle" style="font-family:'Fraunces';font-weight:500;font-size:22px;line-height:1.25;margin-top:6px;">
         [Your job market paper title]
       </div>
@@ -222,7 +219,7 @@
 
     <!-- Working papers -->
     <h2 style="margin-bottom:18px;color:var(--muted);">Working Papers</h2>
-    <!-- EDIT #7 — duplicate this block for each working paper, or delete if none yet -->
+    <!-- EDIT #8 — duplicate this block for each working paper, or delete if none yet -->
     <div class="paper">
       <div class="ptitle">[Working paper title]</div>
       <div class="pmeta">with [co-authors, if any] · [year]</div>
@@ -232,19 +229,43 @@
     <!-- Work in progress -->
     <h2 style="margin:30px 0 14px;color:var(--muted);">Work in Progress</h2>
     <ul class="wip">
-      <!-- EDIT #8 — list ongoing projects, or delete this whole block -->
+      <!-- EDIT #9 — list ongoing projects, or delete this whole block -->
       <li>[Project title or short description]</li>
       <li>[Project title or short description]</li>
     </ul>
   </section>
 
   <!-- ============================================================
-       CV
+       TEACHING
        ============================================================ -->
-  <section id="cv">
-    <div class="label">Curriculum Vitae</div>
-    <!-- EDIT #9 — once you upload your CV PDF to the repo, point this link at it -->
-    <p>My full CV is available <a href="#" target="_blank">here (PDF)</a>.</p>
+  <section id="teaching">
+    <div class="label">Teaching</div>
+    <!-- EDIT #10 — one block per course; copy or delete as needed -->
+    <div class="paper">
+      <div class="ptitle">[Course name]</div>
+      <div class="pmeta">[Teaching Assistant / Instructor] · [Master's / PhD / Undergraduate] · [year]</div>
+    </div>
+    <div class="paper">
+      <div class="ptitle">[Course name]</div>
+      <div class="pmeta">[Role] · [Level] · [year]</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       POLICY
+       ============================================================ -->
+  <section id="policy">
+    <div class="label">Policy</div>
+    <!-- EDIT #11 — one block per piece; put the link inside the href="" -->
+    <div class="paper">
+      <div class="ptitle"><a href="#" target="_blank">[Title of the piece]</a></div>
+      <div class="pmeta">[Outlet or blog] · [month, year]</div>
+      <div class="pabstract">[Optional one-line description.]</div>
+    </div>
+    <div class="paper">
+      <div class="ptitle"><a href="#" target="_blank">[Title of the piece]</a></div>
+      <div class="pmeta">[Outlet] · [month, year]</div>
+    </div>
   </section>
 
   <!-- ============================================================
@@ -252,7 +273,7 @@
        ============================================================ -->
   <section id="contact">
     <div class="label">Contact</div>
-    <!-- EDIT #10 — your contact details -->
+    <!-- EDIT #12 — your contact details -->
     <p>
       Department of Economics<br>
       European University Institute<br>
@@ -264,7 +285,7 @@
 </main>
 
 <footer>
-  <!-- EDIT #11 — footer line; update the year as needed -->
+  <!-- EDIT #13 — footer line; update the year as needed -->
   © 2026 Pedro Lomo
 </footer>
 
