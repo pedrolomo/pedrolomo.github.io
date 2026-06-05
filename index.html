@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     EDIT #1 — the title that shows in the browser tab.
+     ============================================================ -->
+<title>Pedro Lomo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#f7f4ee;
+    --ink:#20201d;
+    --muted:#605a4f;
+    --faint:#8a8377;
+    --accent:#7d2b2b;
+    --line:#e0dacd;
+    --maxw:680px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:19px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* subtle paper grain */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    opacity:.025;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index:1;
+  }
+
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(125,43,43,.28);transition:border-color .2s;}
+  a:hover{border-color:var(--accent);}
+
+  /* ---- slim top nav ---- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(247,244,238,.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;
+    padding:14px 24px;
+    display:flex;justify-content:space-between;align-items:baseline;
+    gap:16px;
+  }
+  .nav-name{font-family:"Fraunces";font-weight:600;font-size:16px;letter-spacing:.01em;}
+  .nav-links{display:flex;gap:20px;font-size:14px;}
+  .nav-links a{color:var(--muted);border:none;letter-spacing:.04em;text-transform:uppercase;font-family:"Newsreader";}
+  .nav-links a:hover{color:var(--accent);}
+
+  /* ---- layout ---- */
+  main{max-width:var(--maxw);margin:0 auto;padding:0 24px 120px;position:relative;z-index:2;}
+
+  section{
+    padding-top:64px;
+    opacity:0;transform:translateY(14px);
+    animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  @keyframes rise{to{opacity:1;transform:none;}}
+  #intro{animation-delay:.05s;}
+  #about{animation-delay:.15s;}
+  #research{animation-delay:.25s;}
+  #cv{animation-delay:.35s;}
+  #contact{animation-delay:.45s;}
+
+  /* ---- header / intro ---- */
+  header{padding-top:88px;}
+  h1{
+    font-family:"Fraunces";
+    font-weight:500;
+    font-size:clamp(40px,8vw,62px);
+    line-height:1.02;
+    letter-spacing:-.015em;
+  }
+  .role{
+    margin-top:14px;
+    font-size:21px;color:var(--muted);
+    font-style:italic;
+  }
+  .affil{margin-top:4px;color:var(--muted);}
+  .contact-row{
+    margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:8px 22px;
+    font-size:15px;letter-spacing:.02em;
+  }
+  .contact-row a{color:var(--muted);border:none;}
+  .contact-row a:hover{color:var(--accent);}
+
+  /* ---- section labels & headings ---- */
+  .label{
+    font-family:"Newsreader";
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:18px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .label::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  h2{font-family:"Fraunces";font-weight:500;font-size:15px;}
+  p{margin-bottom:16px;}
+  p:last-child{margin-bottom:0;}
+
+  /* ---- research entries ---- */
+  .jmp{
+    border-left:3px solid var(--accent);
+    padding:4px 0 4px 22px;
+    margin-bottom:34px;
+  }
+  .jmp .tag{
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:500;
+  }
+  .paper{margin-bottom:30px;}
+  .paper .ptitle{font-family:"Fraunces";font-weight:500;font-size:21px;line-height:1.25;}
+  .paper .pmeta{color:var(--faint);font-size:15px;margin-top:2px;font-style:italic;}
+  .paper .pabstract{margin-top:8px;font-size:17px;color:var(--muted);}
+
+  .wip li{list-style:none;margin-bottom:10px;color:var(--muted);}
+  .wip li::before{content:"—";color:var(--accent);margin-right:10px;}
+
+  /* ---- footer ---- */
+  footer{
+    max-width:var(--maxw);margin:0 auto;padding:40px 24px;
+    border-top:1px solid var(--line);
+    color:var(--faint);font-size:14px;position:relative;z-index:2;
+  }
+
+  @media(max-width:560px){
+    body{font-size:18px;}
+    .nav-links{display:none;}
+    .nav-inner{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <!-- EDIT #2 — your name, small, top-left -->
+    <span class="nav-name">Pedro Lomo</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============================================================
+       HEADER — your name, title, and contact links
+       ============================================================ -->
+  <header id="intro">
+    <!-- EDIT #3 — your full name (check the surname is right!) -->
+    <h1>Pedro Lomo</h1>
+    <div class="role">PhD Candidate in Economics</div>
+    <div class="affil">European University Institute · Florence, Italy</div>
+    <div class="contact-row">
+      <!-- EDIT #4 — fill in your real links. Delete any you don't use. -->
+      <a href="mailto:your.email@eui.eu">Email</a>
+      <a href="#" target="_blank">CV (PDF)</a>
+      <a href="#" target="_blank">Google Scholar</a>
+      <a href="#" target="_blank">SSRN</a>
+      <a href="#" target="_blank">GitHub</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about">
+    <div class="label">About</div>
+    <!-- EDIT #5 — your one- or two-paragraph bio -->
+    <p>I am a PhD candidate in Economics at the European University Institute in Florence, working in international macroeconomics and international trade.</p>
+    <p>My research studies how trade policy uncertainty, geoeconomic fragmentation, and firms' supply-chain resilience shape market structure, markups, and welfare. <em>[Replace this with a sentence or two about what drives your work.]</em></p>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH
+       ============================================================ -->
+  <section id="research">
+    <div class="label">Research</div>
+
+    <!-- Job market paper, highlighted -->
+    <div class="jmp">
+      <div class="tag">Job Market Paper</div>
+      <!-- EDIT #6 — your JMP title and a short abstract -->
+      <div class="ptitle" style="font-family:'Fraunces';font-weight:500;font-size:22px;line-height:1.25;margin-top:6px;">
+        [Your job market paper title]
+      </div>
+      <div class="pabstract">
+        [A short abstract — three or four sentences stating the question, your mechanism, and the main result. You can also add a link to the PDF.]
+      </div>
+    </div>
+
+    <!-- Working papers -->
+    <h2 style="margin-bottom:18px;color:var(--muted);">Working Papers</h2>
+    <!-- EDIT #7 — duplicate this block for each working paper, or delete if none yet -->
+    <div class="paper">
+      <div class="ptitle">[Working paper title]</div>
+      <div class="pmeta">with [co-authors, if any] · [year]</div>
+      <div class="pabstract">[One- or two-sentence summary, plus a PDF link if available.]</div>
+    </div>
+
+    <!-- Work in progress -->
+    <h2 style="margin:30px 0 14px;color:var(--muted);">Work in Progress</h2>
+    <ul class="wip">
+      <!-- EDIT #8 — list ongoing projects, or delete this whole block -->
+      <li>[Project title or short description]</li>
+      <li>[Project title or short description]</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================
+       CV
+       ============================================================ -->
+  <section id="cv">
+    <div class="label">Curriculum Vitae</div>
+    <!-- EDIT #9 — once you upload your CV PDF to the repo, point this link at it -->
+    <p>My full CV is available <a href="#" target="_blank">here (PDF)</a>.</p>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section id="contact">
+    <div class="label">Contact</div>
+    <!-- EDIT #10 — your contact details -->
+    <p>
+      Department of Economics<br>
+      European University Institute<br>
+      Via delle Fontanelle, Florence, Italy
+    </p>
+    <p><a href="mailto:your.email@eui.eu">your.email@eui.eu</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <!-- EDIT #11 — footer line; update the year as needed -->
+  © 2026 Pedro Lomo
+</footer>
+
+</body>
+</html>
