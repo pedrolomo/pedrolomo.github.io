@@ -152,6 +152,20 @@
     .nav-links{display:none;}
     .nav-inner{justify-content:center;}
   }
+/* ---- headshot in header ---- */
+  .intro-row{display:flex;align-items:center;gap:32px;}
+  .intro-text{min-width:0;}
+  .headshot{
+    width:150px;height:150px;
+    flex-shrink:0;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid var(--line);
+  }
+  @media(max-width:560px){
+    .intro-row{flex-direction:column;align-items:flex-start;gap:22px;}
+  }
+     
 </style>
 </head>
 <body>
@@ -175,15 +189,19 @@
   <!-- ============================================================
        HEADER — your name, title, and contact links
        ============================================================ -->
-  <header id="intro">
-    <!-- EDIT #3 — your full name (check the surname is right!) -->
-    <h1>Pedro Lomo Menéndez</h1>
-    <div class="role">PhD Researcher in Economics</div>
-    <div class="affil">European University Institute · Florence, Italy</div>
-    <div class="contact-row">
-      <!-- EDIT #4 — your real links -->
-      <a href="mailto:pedro.lomo@eui.eu">Email</a>
-      <a href="#" target="_blank">CV (PDF)</a>
+<header id="intro">
+    <div class="intro-row">
+      <!-- Make sure the filename below matches your uploaded photo exactly -->
+      <img class="headshot" src="picture.jfif" alt="Pedro Lomo">
+      <div class="intro-text">
+        <h1>Pedro Lomo Menéndez</h1>
+        <div class="role">PhD Researcher in Economics</div>
+        <div class="affil">European University Institute · Florence, Italy</div>
+        <div class="contact-row">
+          <a href="mailto:pedro.lomo@eui.eu">Email</a>
+          <a href="#" target="_blank">CV (PDF)</a>
+        </div>
+      </div>
     </div>
   </header>
 
